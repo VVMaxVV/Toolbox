@@ -35,10 +35,10 @@ android {
 
 publishing {
     publications {
-        register<MavenPublication>("release") {
+        create<MavenPublication>("maven") {
             groupId = "com.github.VVMaxVV"
-            artifactId = "Toolbox"
-            version = "0.0.6"
+            artifactId = "toolbox-core"
+            version = "0.0.7"
 
             afterEvaluate {
                 from(components["release"])
