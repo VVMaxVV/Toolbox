@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    id("maven-publish")
 }
 
 android {
@@ -31,6 +32,21 @@ android {
         jvmTarget = "17"
     }
 }
+
+publishing {
+    publications {
+        register<MavenPublication>("release") {
+            groupId = "com.clyde.toolbox"
+            artifactId = "core"
+            version = "0.0.4"
+
+            afterEvaluate {
+                from(components["release"])
+            }
+        }
+    }
+}
+
 
 dependencies {
 
