@@ -36,9 +36,9 @@ android {
 publishing {
     publications {
         register<MavenPublication>("release") {
-            groupId = "com.clyde.toolbox"
-            artifactId = "core"
-            version = "0.0.5"
+            groupId = "com.github.VVMaxVV"
+            artifactId = "Toolbox"
+            version = "0.0.6"
 
             afterEvaluate {
                 from(components["release"])
