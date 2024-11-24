@@ -38,7 +38,7 @@ publishing {
         register<MavenPublication>("release") {
             groupId = "com.clyde.toolbox"
             artifactId = "core"
-            version = "0.0.4"
+            version = "0.0.5"
 
             afterEvaluate {
                 from(components["release"])
