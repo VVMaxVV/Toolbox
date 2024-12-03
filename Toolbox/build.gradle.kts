@@ -57,7 +57,7 @@ afterEvaluate {
                 from(components["release"])
                 groupId = "com.github.VVMaxVV"
                 artifactId = "Toolbox"
-                version = "0.1.1"
+                version = "0.1.0"
             }
         }
     }

@@ -1,5 +1,8 @@
 package com.clyde.toolbox
 
-class Main {
+import com.clyde.toolbox.extensions.isTrue
 
+fun main() {
+    val a: Boolean? = null
+    println(a.isTrue)
 }
