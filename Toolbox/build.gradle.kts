@@ -1,7 +1,7 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
-    id("maven-publish")
+    id("maven-publish") apply true
 }
 
 android {
@@ -23,6 +23,9 @@ android {
                 "proguard-rules.pro"
             )
         }
+        debug {
+            isMinifyEnabled = false
+        }
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
@@ -31,22 +34,10 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
-}
-
-publishing {
-    publications {
-        create<MavenPublication>("maven") {
-            groupId = "com.github.VVMaxVV"
-            artifactId = "toolbox-core"
-            version = "0.0.7"
-
-            afterEvaluate {
-                from(components["release"])
-            }
-        }
+    publishing {
+        singleVariant("release")
     }
 }
-
 
 dependencies {
 
@@ -56,4 +47,18 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+}
+
+
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("release") {
+                from(components["release"])
+                groupId = "com.github.VVMaxVV"
+                artifactId = "Toolbox"
+                version = "0.1.1"
+            }
+        }
+    }
 }
