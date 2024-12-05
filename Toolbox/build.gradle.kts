@@ -44,9 +44,10 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
+    testImplementation(kotlin("test"))
+    testImplementation(libs.kotlinx.coroutines.test)
+    testImplementation(libs.mockk.core)
+    testImplementation(libs.turbo.flow)
 }
 
 
@@ -57,7 +58,7 @@ afterEvaluate {
                 from(components["release"])
                 groupId = "com.github.VVMaxVV"
                 artifactId = "Toolbox"
-                version = "0.1.0"
+                version = "0.1.1"
             }
         }
     }
