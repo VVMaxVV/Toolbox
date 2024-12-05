@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace = "com.clyde.toolbox"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.clyde.toolbox"
         minSdk = 26
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
